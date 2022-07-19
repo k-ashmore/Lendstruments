@@ -13,6 +13,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render partial: "shared/nav" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

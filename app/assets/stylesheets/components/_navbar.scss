@@ -1,12 +1,53 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+body {
+  background-color: $main-blue;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
+  height: 40px;
+  transition: all .5s ease-in-out;
+  border: 3px solid $main-black;
+}
+
+.menu-btn-burger {
+  width: 25px;
+  height: 3px;
+  background: $main-black;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before, .menu-btn-burger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: $main-black;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before {
+  transform: translateY(-8px);
+}
+
+.menu-btn-burger::after {
+  transform: translateY(8px);
+}
+
+// Animation
+
+.menu-btn.open .menu-btn-burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
 }
