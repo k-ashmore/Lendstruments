@@ -15,11 +15,10 @@ body {
   width: 40px;
   height: 40px;
   transition: all .5s ease-in-out;
-  border: 3px solid $main-black;
 }
 
 .menu-btn-burger {
-  width: 25px;
+  width: 20px;
   height: 3px;
   background: $main-black;
   border-radius: 5px;
@@ -29,10 +28,10 @@ body {
 .menu-btn-burger::before, .menu-btn-burger::after {
   content: '';
   position: absolute;
-  width: 25px;
+  width: 20px;
   height: 3px;
   background: $main-black;
-  border-radius: 5px;
+  border-radius: 15px;
   transition: all .5s ease-in-out;
 }
 
@@ -50,4 +49,12 @@ body {
   transform: translateX(-50px);
   background: transparent;
   box-shadow: none;
+}
+
+.menu-btn.open .menu-btn-burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn-burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
