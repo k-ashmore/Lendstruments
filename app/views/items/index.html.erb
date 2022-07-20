@@ -30,7 +30,8 @@
 
 <br>
 
-<%#= link_to 'New Item', new_item_path %>
 <% if policy(Item).new? %>
   <%= link_to "New item", new_item_path %>
 <% end %>
+
+<%= link_to "Home", root_path %>
