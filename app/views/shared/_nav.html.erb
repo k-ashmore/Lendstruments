@@ -1,7 +1,37 @@
 <nav>
-  <div class="menu-btn">
-    <div class="menu-btn-burger"></div>
+  <div class="logo">
+    <%= image_tag("logo.png", class: "logo-img") %>
   </div>
+  <div class="search-bar">
+    <div id="select">
+      <p id="select-text" class="m0">All categories ↓</p>
+      <ul id="list">
+        <li class="options">All categories</li>
+        <li class="options">Accessories</li>
+        <li class="options">Instruments</li>
+        <li class="options">Music Tech</li>
+      </ul>
+    </div>
+    <%# please update form action (search bar) with logic later %>
+    <form action="/">
+      <input type="text" id="input-field" placeholder="Search in All Categories">
+    </form>
+  </div>
+  <div class="menu-btn">
+    <div class="menu-btn-burger">
+      <ul id="hidden-menu" class="show">
+        <li>My pages</li>
+        <li>Settings</li>
+        <li>Log out</li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="user">
+    <img class="user-img rounded-circle" src="https://i1.sndcdn.com/avatars-Y4FWxZArroFMOlQS-03Fdvg-t240x240.jpg" alt="user-img">
+  </div>
+
 </nav>
 
 <%= javascript_pack_tag 'hamburger'%>
+<%= javascript_pack_tag 'search'%>
