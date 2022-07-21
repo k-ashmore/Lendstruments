@@ -1,0 +1,130 @@
+.search-bar {
+  //background-color: $main-black;
+  height: 30px;
+  margin-top: 10px;
+  width: 60%;
+  display: flex;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.m0 {
+  margin: 0px;
+  padding-left: 10px;
+}
+
+#select {
+  background-color: $main-green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $main-black;
+  width: 16vw;
+  position: relative;
+  cursor: pointer;
+  border-top: solid $main-black;
+  border-left: solid $main-black;
+  border-bottom: solid $main-black;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#select ul {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  background-color: $main-blue;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  border-radius: 4px;
+  visibility: hidden;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+#select ul li {
+  padding: 10px 20px;
+}
+#select ul li:hover {
+  background-color: $main-green;
+  font-weight: bold;
+}
+
+.search-bar input {
+  //padding: 10px 25px;
+  width: 60em;
+  border: none;
+  outline: none;
+  font-size: 11px;
+}
+
+#select ul.open {
+  visibility: visible;
+}
+
+#input-field {
+  border: solid $main-black;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 26px;
+  padding-left: 5px;
+  position: fixed;
+}
+form {
+  box-sizing:border-box;
+}
+
+//navbar media queries need to be fixed
+
+@media only screen and (min-width: 1301px) {
+
+  .search-bar input {
+    width: 64em;
+  }
+  #select {
+    width: 12vw;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+
+  .search-bar input {
+    width: 50em;
+  }
+  #select {
+    width: 16vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .search-bar input {
+    width: 45em;
+  }
+  #select {
+    width: 16vw;
+  }
+}
+
+@media only screen and (max-width: 1092px) {
+
+  .search-bar input {
+    width: 40em;
+  }
+  #select {
+    width: 14vw;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+
+  .search-bar input {
+    width: 25em;
+  }
+  #select {
+    width: 14vw;
+    font-size: 14px;
+  }
+}
