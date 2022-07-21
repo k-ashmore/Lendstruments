@@ -28,3 +28,12 @@ nav {
 #hidden-menu li:hover {
   font-weight: 800;
 }
+
+
+.menu-btn.open .menu-btn-burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn-burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
