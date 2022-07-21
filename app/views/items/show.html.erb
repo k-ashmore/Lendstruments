@@ -19,22 +19,25 @@
       <p>Pick up: near Yahiro Station</p>
     </div>
 
-    <div class="col-6">
-      <%# BOOKING FORM %>
-      <%#= simple_form_for @item.booking do |f| %>
-        <%#= f.input :start_date, as: :date %>
-        <%#= f.input :end_date, as: :date %>
-        <%# f.button :submit 'Request this item' %>
-      <%# end %>
+    <div class="col-6" id="date-form-container">
+      <div class="date-form">
+        <%# BOOKING FORM %>
+        <%#= simple_form_for @item.booking do |f| %>
+          <%#= f.input :start_date, as: :date %>
+          <%#= f.input :end_date, as: :date %>
+          <%# f.button :submit 'Request this item' %>
+        <%# end %>
+        <div class="btn btn-request">Reqest this item</div>
+      </div>
     </div>
   </div>
 
   <div class="row">
     <div>
       <% if policy(@item).edit? %>
-        <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-info" %>
+        <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-edit" %>
       <% end %>
-      <%= link_to 'Back', items_path, class:"btn btn-success" %>
+      <%= link_to 'Back', items_path, class:"btn btn-back" %>
     </div>
   </div>
 </div>
