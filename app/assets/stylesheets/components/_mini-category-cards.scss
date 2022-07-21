@@ -1,0 +1,30 @@
+.rentals-tab-bar {
+  height: 70px;
+  font-size: 13px;
+  display: flex;
+  font-family: ‘Albert Sans’, sans-serif;
+}
+
+.rentals-tab {
+  height: 50px;
+  margin: 12px;
+  background-color: white;
+  padding: 16px;
+  width: 55px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+// switch this to active later on
+.rentals-tab:hover {
+  border-bottom: 5px solid $main-black;
+}
+
+.r-name-p {
+  margin: 0px;
+  font-weight: bold;
+}
+.rentals-icon-box {
+ font-size: 22px;
+  margin-bottom: 12px;
+}
