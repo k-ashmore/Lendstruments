@@ -1,0 +1,55 @@
+#item-container {
+  display: grid;
+  justify-content: space-evenly;
+
+}
+
+#item-overview {
+  padding-bottom: 15px;
+}
+
+#item-name {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#item-photo {
+  width: auto
+
+  ;
+  height: 500px;
+  border-radius: 10px;
+}
+
+#item-details {
+  padding: 15px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+#date-form-container {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  #date-form {
+
+  }
+
+  .btn-request {
+    width: 13rem;
+    background-color: $main-blue;
+    border-radius: 10px;
+    border-color: black;
+  }
+}
+
+.btn-back {
+  background-color: lightgoldenrodyellow;
+}
+
+.btn-edit {
+  background-color: $main-green;
+}
