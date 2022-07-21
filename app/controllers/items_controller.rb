@@ -3,25 +3,25 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.all
-    # @items = policy_scope(Item).order(created_at: :desc)
+    # @items = Item.all
+    @items = policy_scope(Item).order(created_at: :desc)
   end
 
   # GET /items/1
   def show
-    # authorize @item <-- is called in the set_item private method ebcause it will be called in all the before_actons
+    # authorize @item # <-- DONT NEED because it's called in the set_item private method because it will be called in all the before_actons
   end
 
   def new
     @item = Item.new
-    # authorize @item
+    authorize @item
   end
 
   # POST /items
   def create
     @item = Item.new(item_params)
-    @item.user = current_user
-    # authorize @item
+    @item.user = current_user # when we create a new item, we set the user of the item as the current user
+    authorize @item
 
     if @item.save
       redirect_to @item, notice: 'Item was successfully created.'
@@ -50,14 +50,15 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-      # authorize @item
-    end
 
-    # Only allow a list of trusted parameters through.
-    def item_params
-      params.require(:item).permit(:name, :details, :category, :daily_rate)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item
+    @item = Item.find(params[:id])
+    authorize @item
+  end
+
+  # Only allow a list of trusted parameters through.
+  def item_params
+    params.require(:item).permit(:name, :details, :category, :daily_rate)
+  end
 end

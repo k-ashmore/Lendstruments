@@ -17,12 +17,12 @@
         <td><%= item.name %></td>
         <td><%= item.user_id %></td>
         <td><%= link_to 'Show', item %></td>
-        <%# if policy(item).edit? %>
+        <% if policy(item).edit? %>
           <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <%# end %>
-        <%# if policy(item).destroy? %>
+        <% end %>
+        <% if policy(item).destroy? %>
           <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%# end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,7 +30,8 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
-<%# if policy(Item).new? %>
-  <%#= link_to "New item", new_item_path %>
-<%# end %>
+<% if policy(Item).new? %>
+  <%= link_to "New item", new_item_path %>
+<% end %>
+
+<%= link_to "Home", root_path %>
