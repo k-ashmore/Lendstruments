@@ -1,16 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<div class="container" id="item-container">
+  <div class="row item-overview">
+    <div class="col-12">
+      <h1 id="item-name">
+        <%= @item.name %>
+      </h1>
+      <%#= @item.photo %>
+      <img id="item-photo" src="https://ca.yamaha.com/files/lineupbg03_202202_b51814f473ab11ee90a569e4f8b572b8.jpg" alt="">
+    </div>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @item.user_id %>
-</p>
+  <div class="row">
+    <div class="col-6" id="item-details">
+      <h3>Status: Available</h2>
+      <p>Description: <%= @item.details %></p>
+      <p>Daily rate: <%= @item.daily_rate %> yen</p>
+      <p>Pick up: near Yahiro Station</p>
+    </div>
 
-<% if policy(@item).edit? %>
-  <%= link_to 'Edit', edit_item_path(@item) %> |
-<% end %>
-<%= link_to 'Back', items_path %>
+    <div class="col-6">
+      <%# BOOKING FORM %>
+      <%#= simple_form_for @item.booking do |f| %>
+        <%#= f.input :start_date, as: :date %>
+        <%#= f.input :end_date, as: :date %>
+        <%# f.button :submit 'Request this item' %>
+      <%# end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <% if policy(@item).edit? %>
+        <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-info" %>
+      <% end %>
+      <%= link_to 'Back', items_path, class:"btn btn-success" %>
+    </div>
+  </div>
+</div>

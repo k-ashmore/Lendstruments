@@ -1,0 +1,29 @@
+#item-container {
+  display: grid;
+  justify-content: space-evenly;
+}
+
+#item-overview {
+  padding-bottom: 15px;
+}
+
+#item-name {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#item-photo {
+  width: auto
+
+  ;
+  height: 500px;
+  border-radius: 10px;
+}
+
+#item-details {
+  padding: 15px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
