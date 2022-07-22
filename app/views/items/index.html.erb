@@ -2,31 +2,27 @@
 
 <h1>Items</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+  <div class="cards">
     <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.user_id %></td>
-        <td><%= link_to 'Show', item %></td>
+    <%= link_to item do %>
+    <div class="card-pick">
+      <img src="https://via.placeholder.com/50" alt="">
+      <div class="card-pick-info">
+        <h2><%= item.name %></h2>
+        <h3><%= item.user.username %></h3>
+        <p><%= item.details %></p>
+      </div>
         <% if policy(item).edit? %>
-          <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <% end %>
-        <% if policy(item).destroy? %>
-          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+            <p><%= link_to 'Edit', edit_item_path(item) %></p>
+          <% end %>
+          <% if policy(item).destroy? %>
+            <p><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+      <% end %>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 
