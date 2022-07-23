@@ -40,7 +40,7 @@ items = [
     pickup_location: "Tokyo",
     daily_rate: 3000,
     user: jessica,
-    url: "https://images.unsplash.com/photo-1599010369632-ea06974fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    url: "https://res.cloudinary.com/doizo65a2/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1658544858/Lendstruments/photo-1599010369632-ea06974fd37e_wezpq1.jpg"
   },
 
   {
@@ -50,7 +50,7 @@ items = [
     pickup_location: "Tokyo",
     daily_rate: 2000,
     user: tyler,
-    url: "https://images.unsplash.com/photo-1530547253710-9bdf4c648014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1119&q=80"
+    url: "https://res.cloudinary.com/doizo65a2/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1658547166/Lendstruments/photo-1530547253710-9bdf4c648014_b5i6xz.jpg"
   },
 
   {
@@ -60,7 +60,7 @@ items = [
     pickup_location: "Tokyo",
     daily_rate: 6000,
     user: ken,
-    url: "https://images.unsplash.com/photo-1461784180009-21121b2f204c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    url: "https://res.cloudinary.com/doizo65a2/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1658547214/Lendstruments/photo-1461784180009-21121b2f204c_ii7lpo.jpg"
   },
 
   {
@@ -70,7 +70,7 @@ items = [
     pickup_location: "Tokyo",
     daily_rate: 5000,
     user: ken,
-    url: "https://images.unsplash.com/photo-1507245921392-e902673ca772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    url: "https://res.cloudinary.com/doizo65a2/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1658547251/Lendstruments/photo-1507245921392-e902673ca772_aosxl8.jpg"
   }
 ]
 
@@ -87,11 +87,14 @@ items.each do |item_info|
 
   puts "getting photo for items..."
   downloaded_image = URI.open(item_info[:url])
-  item.photo.attach(io: downloaded_image, filename: "item#{i}.jpg")
+  item.photo.attach(io: downloaded_image, filename: "item#{i}.png", content_type: "image/png")
   i += 1
   if item.save
     puts "#{item.name} was saved!"
   else
     p item.errors.messages
   end
+
+  puts "Seeded successfully!"
+
 end

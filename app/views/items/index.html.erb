@@ -2,13 +2,12 @@
 
 <h1>Items</h1>
 
-
   <div class="main-container">
     <div class="cards">
       <% @items.each do |item| %>
         <div class="card-pick">
           <%= link_to item_path(item) do %>
-          <%= item.photo.key %>
+          <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="card-pick-info">
               <h2><%= item.name %></h2>
               <h3><%= item.user.username %></h3>
