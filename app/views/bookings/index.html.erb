@@ -3,7 +3,7 @@
   <% @bookings.each do |booking| %>
     <div class="bookings-card">
       <%= cl_image_tag booking.item.photo.key, class: "item-img" %>
-      <div class="bookings-card-details p-2">
+      <div class="bookings-card-details mb-2">
         <div class="status-owner">
           <p class="status"><%= booking.status %></p>
           <p class="owner"><%= booking.item.user.username %></p>
