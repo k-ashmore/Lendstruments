@@ -26,7 +26,8 @@
           <%#= f.input :end_date, as: :date %>
           <%# f.button :submit 'Request this item' %>
         <%# end %>
-        <div class="btn btn-request">Reqest this item</div>
+        <%= link_to "Reqest this item", new_item_booking_path(@item), class:"btn btn-request" %>
+        <%# <div class="btn btn-request">Reqest this item</div> %>
       </div>
     </div>
   </div>
