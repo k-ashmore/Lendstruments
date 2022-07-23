@@ -1,5 +1,7 @@
+require 'open-uri'
 puts "cleaning database..."
 User.destroy_all
+Item.destroy_all
 
 puts "Seeding database with Plutonians..."
 password = "123456"
@@ -18,4 +20,68 @@ jessica.save
 tyler.save
 nicole.save
 
-puts "done!"
+puts "adding items..."
+
+items = [
+  {
+    name: "guitar",
+    details: "this is a stratocastor that I bought in Ochanomizu, its a little beat up but works great.",
+    category: "instrument",
+    daily_rate: 2000,
+    user: jessica,
+    url: "https://images.unsplash.com/photo-1606043357323-69163e39abfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
+  },
+
+  {
+    name: "bass",
+    details: "do not drop drop drop the bass",
+    category: "instrument",
+    daily_rate: 3000,
+    user: jessica,
+    url: "https://images.unsplash.com/photo-1599010369632-ea06974fd37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+  },
+
+  {
+    name: "flute",
+    details: "this flute has been to bandcamp with me",
+    category: "instrument",
+    daily_rate: 2000,
+    user: tyler,
+    url: "https://images.unsplash.com/photo-1530547253710-9bdf4c648014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1119&q=80"
+  },
+
+  {
+    name: "turntables",
+    details: "I've been spinning these puppies since 1998",
+    category: "equipment",
+    daily_rate: 6000,
+    user: ken,
+    url: "https://images.unsplash.com/photo-1461784180009-21121b2f204c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  },
+
+  {
+    name: "amp",
+    details: "this amp goes up to 11",
+    category: "equipment",
+    daily_rate: 5000,
+    user: ken,
+    url: "https://images.unsplash.com/photo-1507245921392-e902673ca772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  }
+]
+
+i = 1
+items.each do |item_info|
+  item = Item.new(
+    name: item_info[:name],
+    details: item_info[:details],
+    category: item_info[:category],
+    daily_rate: item_info[:daily_rate],
+    user: item_info[:user],
+  )
+
+  puts "getting photo for items..."
+  downloaded_image = URI.open(item_info[:url])
+  item.photo.attach(io: downloaded_image, filename: "item#{i}.jpg")
+  i += 1
+  item.save
+end

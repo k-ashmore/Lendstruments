@@ -128,3 +128,17 @@ form {
     font-size: 14px;
   }
 }
+
+@media only screen and (max-width: 790px) {
+
+  .search-bar input {
+    width: 20em;
+  }
+  #select {
+    width: 14vw;
+    font-size: 11px;
+  }
+  #select ul {
+    font-size: 11px;
+  }
+}
