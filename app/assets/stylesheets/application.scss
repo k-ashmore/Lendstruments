@@ -14,3 +14,11 @@
 
 @import "pages/login";
 @import "components/bookings_card";
+
+a {
+  text-decoration: none;
+  color: $main-black;
+  :hover {
+    color: $main-blue;
+  }
+}
