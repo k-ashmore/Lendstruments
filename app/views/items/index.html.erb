@@ -2,26 +2,27 @@
 
 <h1>Items</h1>
 
-
-  <div class="cards">
-    <% @items.each do |item| %>
-    <%= link_to item do %>
-    <div class="card-pick">
-       <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-pick-info">
-        <h2><%= item.name %></h2>
-        <h3><%= item.user.username %></h3>
-        <p><%= item.details %></p>
+  <div class="main-container">
+    <div class="cards">
+      <% @items.each do |item| %>
+        <div class="card-pick">
+          <%= link_to item_path(item) do %>
+          <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-pick-info">
+              <h2><%= item.name %></h2>
+              <h3><%= item.user.username %></h3>
+              <p><%= item.details %></p>
+              <% if policy(item).edit? %>
+                <%= link_to 'Edit', edit_item_path(item) %>
+              <% end %>
+              <% if policy(item).destroy? %>
+                <%= link_to 'Destroy', item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+          </div>
+          <% end %>
       </div>
-        <% if policy(item).edit? %>
-            <p><%= link_to 'Edit', edit_item_path(item) %></p>
-          <% end %>
-          <% if policy(item).destroy? %>
-            <p><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-          <% end %>
       <% end %>
     </div>
-    <% end %>
   </div>
 
 <br>
