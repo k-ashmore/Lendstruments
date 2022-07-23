@@ -3,6 +3,7 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
     def index?
       return true
     end
@@ -10,11 +11,6 @@ class BookingPolicy < ApplicationPolicy
     def create?
       return true
     end
-
-    def new?
-      return true
-    end
-
 
     # NOTE: Be explicit about which records you allow access to!
     # def resolve

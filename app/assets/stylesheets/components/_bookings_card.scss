@@ -1,0 +1,58 @@
+.bookings-card {
+  display: flex;
+  height: 200px;
+  width: 600px;
+  border-radius: 10px;
+  border: solid;
+  overflow: hidden;
+}
+
+.item-img {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-right: solid;
+}
+
+
+.bookings-card-details {
+  line-height: 15px;
+  width: inherit;
+
+}
+
+.status-owner {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-green;
+}
+
+.item-img {
+  height: 200px;
+  width: 200px;
+}
+.req-and-owner {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.user-prof-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.item-owner-details {
+  text-align: center;
+}
+
+.contact-btn {
+  padding: 10px;
+  height: 40px;
+  width: 75px;
+  background-color: #F04242;
+  border-radius: 10px;
+  border: solid;
+  font-weight: bold;
+}
