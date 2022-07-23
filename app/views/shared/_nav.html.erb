@@ -22,11 +22,9 @@
   <div class="menu-btn">
     <div class="menu-btn-burger">
       <ul id="hidden-menu" class="show">
-        <li><%#= link_to "My Bookings", bookings_path %></li>
-        <li>My Bookings</li>
+        <li><%= link_to "My Bookings", bookings_path %></li>
         <li>Settings</li>
         <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-        <%# <li>Log Out</li> %>
       </ul>
 
     </div>
