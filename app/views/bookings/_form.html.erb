@@ -1,5 +1,8 @@
 <%= simple_form_for [ @item, @booking ] do |f| %>
   <%= f.input :start_date, as: :date %>
   <%= f.input :end_date, as: :date %>
+  <p>Daily rate: <%= @item.daily_rate %> </p>
+  <p>Total cost: 38747493743 yen</p>
+  <p>Pick-up Location: <%= @item.pickup_location %></p>
   <%= f.submit "Submit booking request", class: "btn btn-primary" %>
 <% end %>

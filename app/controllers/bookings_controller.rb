@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     authorize @item
 
     if @booking.save
-      redirect_to root_path, notice: 'Booking request was successfully created.'
+      redirect_to bookings_path, notice: 'Booking request was successfully created.'
     else
       render :new
     end
