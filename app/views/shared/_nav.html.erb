@@ -1,6 +1,8 @@
 <nav>
   <div class="logo">
-    <%= image_tag("logo.png", class: "logo-img") %>
+    <%= link_to root_path do %>
+      <%= image_tag("logo.png", class: "logo-img") %>
+    <% end %>
   </div>
   <div class="search-bar">
     <div id="select">
@@ -20,9 +22,11 @@
   <div class="menu-btn">
     <div class="menu-btn-burger">
       <ul id="hidden-menu" class="show">
-        <li>My pages</li>
+        <li><%#= link_to "My Bookings", bookings_path %></li>
+        <li>My Bookings</li>
         <li>Settings</li>
-        <li>Log out</li>
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <%# <li>Log Out</li> %>
       </ul>
 
     </div>
