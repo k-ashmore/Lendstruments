@@ -1,9 +1,9 @@
 <h1>Your booking Requests</h1>
 <div class="container ">
   <% @bookings.each do |booking| %>
-    <div class="bookings-card">
+    <div class="bookings-card mb-3">
       <%= cl_image_tag booking.item.photo.key, class: "item-img" %>
-      <div class="bookings-card-details mb-2">
+      <div class="bookings-card-details">
         <div class="status-owner">
           <p class="status"><%= booking.status %></p>
           <p class="owner"><%= booking.item.user.username %>'s item</p>
