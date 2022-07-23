@@ -67,5 +67,7 @@ gem 'devise'
 
 gem 'pundit'
 
+gem 'cloudinary', '~> 1.16.0'
+
 # following validates date for booking model
 gem 'date_validator'
