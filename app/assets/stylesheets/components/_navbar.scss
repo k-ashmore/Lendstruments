@@ -37,3 +37,23 @@ nav {
 .menu-btn.open .menu-btn-burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
+
+@media only screen and (max-width: 790px) {
+  nav {
+    display: block;
+  }
+  .search-bar input {
+    width: 25em;
+  }
+  #select {
+    width: 14vw;
+    font-size: 11px;
+  }
+  #select ul {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+}
