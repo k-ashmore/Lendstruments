@@ -1,7 +1,8 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      # scope.all
+      return user.bookings
     end
 
     def index?

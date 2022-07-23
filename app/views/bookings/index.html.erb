@@ -1,27 +1,29 @@
 <h1>Your booking Requests</h1>
 <div class="container ">
-  <div class="bookings-card">
-    <img class="item-img" src="https://ae01.alicdn.com/kf/HLB1ejVOasfrK1RkSmLyq6xGApXaQ/a-mandolins.jpg_Q90.jpg_.webp" alt="mandolin">
-    <div class="bookings-card-details p-2">
-      <div class="status-owner">
-        <p class="status">Status: Pending</p>
-        <p class="owner">Conankun's item</p>
-      </div>
+  <% @bookings.each do |booking| %>
+    <div class="bookings-card">
+      <%= cl_image_tag booking.item.photo.key, class: "item-img" %>
+      <div class="bookings-card-details p-2">
+        <div class="status-owner">
+          <p class="status"><%= booking.status %></p>
+          <p class="owner"><%= booking.item.user.username %></p>
+        </div>
 
-      <div class="req-and-owner">
-        <div class="req-details">
-          <p class="req-title">Super Cool Mandolin</p>
-          <p class="req-dates">Aug 1st - Aug 5th</p>
-          <p class="req-total">26,289 yen</p>
+        <div class="req-and-owner">
+          <div class="req-details">
+            <p class="req-title"><%= booking.item.name %></p>
+            <p class="req-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
+            <p class="req-total">26,289 yen</p>
+          </div>
+          <div class="item-owner-details">
+            <img class="user-prof-pic" src="https://cdn.gingergeneration.it/uploads/2018/04/Detective-Conan.jpg" alt="">
+            <p class="user-name"><%= booking.item.user.username %></p>
+          </div>
         </div>
-        <div class="item-owner-details">
-          <img class="user-prof-pic" src="https://cdn.gingergeneration.it/uploads/2018/04/Detective-Conan.jpg" alt="">
-          <p class="user-name">Conankun</p>
+        <div class="card-buttons">
+          <div class="contact-btn">Cancel</div>
         </div>
-      </div>
-      <div class="card-buttons">
-        <div class="contact-btn">Cancel</div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
