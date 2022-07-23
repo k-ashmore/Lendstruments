@@ -6,8 +6,7 @@
       <h1 id="item-name">
         <%= @item.name %>
       </h1>
-      <%#= @item.photo %>
-      <img id="item-photo" src="https://ca.yamaha.com/files/lineupbg03_202202_b51814f473ab11ee90a569e4f8b572b8.jpg" alt="">
+      <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
   </div>
 
@@ -15,8 +14,8 @@
     <div class="col-6" id="item-details">
       <h3>Status: Available</h2>
       <p>Description: <%= @item.details %></p>
-      <p>Daily rate: <%= @item.daily_rate %> yen</p>
-      <p>Pick up: near Yahiro Station</p>
+      <p>Daily rate: ¥<%= @item.daily_rate %></p>
+      <p>Pick up:<%= @item.pickup_location %></p>
     </div>
 
     <div class="col-6" id="date-form-container">
