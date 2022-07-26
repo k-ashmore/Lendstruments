@@ -13,7 +13,7 @@
           <div class="req-details">
             <p class="req-title"><%= booking.item.name %></p>
             <p class="req-dates"><%= booking.start_date.to_formatted_s(:short) %> - <%= booking.end_date.to_formatted_s(:short) %></p>
-            <p class="req-total"><%= booking.item.daily_rate %> x <%= (booking.end_date - booking.start_date).to_i  %> = <%= booking.item.daily_rate * (booking.end_date - booking.start_date).to_i %> </p>
+            <p class="req-total"><%= format_price(booking.item.daily_rate) %> x <%= (booking.end_date - booking.start_date).to_i  %> = <%= format_price(booking.item.daily_rate * (booking.end_date - booking.start_date).to_i) %> </p>
           </div>
           <div class="item-owner-details">
             <img class="user-prof-pic" src="https://source.unsplash.com/random?person" alt="/user">

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-
+  has_many :bookings, dependent: :destroy
   validates :name, presence: true, length: { in: 2..60 }
   validates :details, presence: true, length: { maximum: 200 }
   validates :category, presence: true
