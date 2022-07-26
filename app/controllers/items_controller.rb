@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    # @items = Item.all
     @items = policy_scope(Item).order(created_at: :desc)
+    @items = @items.search_by_name_and_details(params[:query]) if params[:query].present?
   end
 
   # GET /items/1
