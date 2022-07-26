@@ -1,5 +1,4 @@
 .search-bar {
-  //background-color: $main-black;
   height: 30px;
   margin-top: 10px;
   width: 60%;
@@ -27,6 +26,8 @@
   border-bottom: solid $main-black;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  align-self: flex-end;
+  height: -webkit-fill-available;
 }
 
 #select ul {
