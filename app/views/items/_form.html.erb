@@ -1,33 +1,11 @@
-
-<%= simple_form_for(@item) do |f| %>
+<%= simple_form_for [@item] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
     <%= f.input :name %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :details, as: :text %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :category, collection: [ "Guitar", "Bass", "Drums", "Microphone", "Mixing Board"] %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :daily_rate %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :pickup_location %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :photo, as: :file %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <%= f.submit "Create new item", class: "btn btn-primary" %>
 <% end %>
