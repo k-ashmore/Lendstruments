@@ -71,3 +71,5 @@ gem 'cloudinary', '~> 1.16.0'
 
 # following validates date for booking model
 gem 'date_validator'
+
+gem 'pg_search', '~> 2.3.0'

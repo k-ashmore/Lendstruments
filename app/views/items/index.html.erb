@@ -4,6 +4,9 @@
 
   <div class="main-container">
     <div class="cards">
+      <% if @items.empty? %>
+        <p>Empty</p>
+      <% end %>
       <% @items.each do |item| %>
         <div class="card-pick">
           <%= link_to item_path(item) do %>
