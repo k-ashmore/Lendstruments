@@ -8,4 +8,5 @@ class Item < ApplicationRecord
   validates :daily_rate, presence: true
   validates :daily_rate, numericality: { greater_than_or_equal_to: 100, less_than_or_equal_to: 100_000 }
   has_one_attached :photo
+  validates :photo, presence: true
 end
