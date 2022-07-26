@@ -1,21 +1,30 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      # scope.all
-      return user.bookings
+      scope.where(user: user)
     end
-
-    def index?
-      return true
-    end
-
-    def create?
-      return true
-    end
-
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
   end
+
+  def index?
+    return true
+  end
+
+  def create?
+    return true
+  end
+
+  def destroy?
+    record.user == user
+  end
+
+  # NOTE: Be explicit about which records you allow access to!
+  # def resolve
+  #   scope.all
+  # end
 end
+
+# <% @restaurants.each do |restaurant| %>
+# <% if policy(restaurant).edit? %>
+#   <%= link_to "Update", edit_restaurant_path(restaurant) %>
+# <% end %>
+# <% end %>
