@@ -17,10 +17,12 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <p> Creating an account means I agree to the <u><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">terms and conditions*</a></u></p>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Create an Account" %>
   </div>
 <% end %>
 
