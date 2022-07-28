@@ -1,6 +1,6 @@
 <%= simple_form_for [ @item, @booking ] do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
+  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
   <p>Daily rate: <%= @item.daily_rate %> </p>
   <p>Total cost: 38747493743 yen</p>
   <p>Pick-up Location: <%= @item.pickup_location %></p>
