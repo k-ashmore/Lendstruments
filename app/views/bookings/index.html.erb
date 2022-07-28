@@ -22,7 +22,7 @@
         </div>
         <div class="card-buttons">
           <% if policy(booking).destroy? %>
-            <%= link_to "Cancel", booking_path(booking), :method => :delete, :class => 'contact-btn' %>
+            <%= link_to "Cancel", booking_path(booking), :method => :delete, :class => 'contact-btn', data: {confirm: "Are you sure?"} %>
           <% end %>
         </div>
       </div>
