@@ -10,6 +10,11 @@ class ItemsController < ApplicationController
   # GET /items/1
   def show
     # authorize @item # <-- DONT NEED because it's called in the set_item private method because it will be called in all the before_actons
+    @markers =
+      [{
+        lat: @item.latitude,
+        lng: @item.longitude
+      }]
   end
 
   def new

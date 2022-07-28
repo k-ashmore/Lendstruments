@@ -73,3 +73,6 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'date_validator'
 
 gem 'pg_search', '~> 2.3.0'
+
+# following for geocoding
+gem "geocoder"

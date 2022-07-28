@@ -16,4 +16,7 @@ class Item < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
+
+  geocoded_by :pickup_location
+  after_validation :geocode, if: :will_save_change_to_pickup_location?
 end
