@@ -7,5 +7,9 @@
     <%= f.input :daily_rate %>
     <%= f.input :pickup_location %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "Create new item", class: "btn btn-primary" %>
+    <% if @item.save %>
+      <%= f.submit "Update item", class: "btn btn-primary" %>
+    <% else %>
+      <%= f.submit "Create new item", class: "btn btn-primary" %>
+    <% end %>
 <% end %>

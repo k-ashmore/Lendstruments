@@ -9,9 +9,9 @@
       <p id="select-text" class="m0">All categories ↓</p>
       <ul id="list">
         <li class="options">All categories</li>
-        <li class="options">Accessories</li>
         <li class="options">Instruments</li>
-        <li class="options">Music Tech</li>
+        <li class="options">DJ gear</li>
+        <li class="options">Amps</li>
       </ul>
     </div>
 
@@ -29,7 +29,13 @@
     </div>
   </div>
   <div class="user">
-    <img class="user-img rounded-circle" src="https://i1.sndcdn.com/avatars-Y4FWxZArroFMOlQS-03Fdvg-t240x240.jpg" alt="user-img">
+  <% if user_signed_in? %>
+    <% if current_user.avatar.present? %>
+      <%= cl_image_tag(current_user.avatar.key, class: "user-img rounded-circle") %>
+    <% else %>
+      <img class="user-img rounded-circle" src="https://source.unsplash.com/random/?person" alt="user-img">
+    <% end %>
+  <% end  %>
   </div>
 
 </nav>
