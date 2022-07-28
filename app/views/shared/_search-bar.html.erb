@@ -1,4 +1,27 @@
-<%# search with pg search %>
+<%# <form action="/items">
+  <input type="text" class="form-control" id="query" name="query" value="" placeholder="Search in all categories">
+  <select id="items" name="items">
+    <option value="">All categories</option>
+    <option value="Instruments">Instruments</option>
+    <option value="Recording Equipment">Recording Equipment</option>
+    <option value="DJ Gear">DJ Gear</option>
+    <option value="Amps">Amps</option>
+  </select>
+  <input type="submit">
+</form> %>
+
+
+<div id="select">
+  <p id="select-text" class="m0">All categories ↓</p>
+  <ul id="list">
+    <li class="options">All categories</li>
+    <li class="options">Instruments</li>
+    <li class="options">Recording Equipment</li>
+    <li class="options">DJ Gear</li>
+    <li class="options">Amps</li>
+  </ul>
+</div>
+
 <%= form_tag items_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -6,6 +29,5 @@
     id: "input-field",
     placeholder: "Search in All Categories"
   %>
-  <%#= check_box_tag "category", "instrument" %>
   <% submit_tag "Search", class: "btn btn-primary" %>
 <% end %>

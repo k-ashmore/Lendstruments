@@ -5,7 +5,7 @@
   <div class="main-container">
     <div class="cards">
       <% if @items.empty? %>
-        <p>Empty</p>
+        <p>No results for <%= params[:query] %>.</p>
       <% end %>
       <% @items.each do |item| %>
         <div class="card-pick">
