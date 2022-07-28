@@ -3,7 +3,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <%= f.input :name %>
     <%= f.input :details, as: :text %>
-    <%= f.input :category, collection: [ "Guitar", "Bass", "Drums", "Microphone", "Mixing Board"] %>
+    <%= f.input :category, collection: [ "Instruments", "Recording equipment", "DJ gear", "Amps"] %>
     <%= f.input :daily_rate %>
     <%= f.input :pickup_location %>
     <%= f.input :photo, as: :file %>
