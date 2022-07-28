@@ -14,7 +14,6 @@
         <li class="options">Music Tech</li>
       </ul>
     </div>
-    <%# please update form action (search bar) with logic later %>
     <form action="/">
       <input type="text" id="input-field" placeholder="Search in All Categories">
     </form>
@@ -30,7 +29,13 @@
     </div>
   </div>
   <div class="user">
-    <img class="user-img rounded-circle" src="https://i1.sndcdn.com/avatars-Y4FWxZArroFMOlQS-03Fdvg-t240x240.jpg" alt="user-img">
+  <% if user_signed_in? %>
+    <% if current_user.avatar.present? %>
+      <%= cl_image_tag(current_user.avatar.key, class: "user-img rounded-circle") %>
+    <% else %>
+      <img class="user-img rounded-circle" src="https://source.unsplash.com/random/?person" alt="user-img">
+    <% end %>
+  <% end  %>
   </div>
 
 </nav>
