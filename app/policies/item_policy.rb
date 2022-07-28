@@ -20,8 +20,11 @@ class ItemPolicy < ApplicationPolicy
     # If the user is the own of the item => true; otherwise => false
     ## user => current_user
     ## record => @item (arg passed to authorize)
-
     user == record.user
+  end
+
+  def update?
+    edit?
   end
 
   def destroy?
