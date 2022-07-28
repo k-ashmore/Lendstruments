@@ -4,20 +4,11 @@
       <%= image_tag("logo.png", class: "logo-img") %>
     <% end %>
   </div>
+
   <div class="search-bar">
-    <div id="select">
-      <p id="select-text" class="m0">All categories ↓</p>
-      <ul id="list">
-        <li class="options">All categories</li>
-        <li class="options">Accessories</li>
-        <li class="options">Instruments</li>
-        <li class="options">Music Tech</li>
-      </ul>
-    </div>
-
     <%= render partial: "shared/search-bar" %>
-
   </div>
+
   <div class="menu-btn">
     <div class="menu-btn-burger">
       <ul id="hidden-menu" class="show">
