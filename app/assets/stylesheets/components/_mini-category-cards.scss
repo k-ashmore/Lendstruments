@@ -2,7 +2,10 @@
   height: 70px;
   font-size: 13px;
   display: flex;
-  font-family: ‘Albert Sans’, sans-serif;
+  font-family: 'Albert Sans', sans-serif;
+  display: flex;
+  align-items: center;
+justify-content: center;
 }
 
 .category-tab {
@@ -26,4 +29,9 @@
 }
 .category-icon-box {
  font-size: 22px;
+}
+
+.arrow {
+  margin: 30px;
+  font-size: 22px;
 }

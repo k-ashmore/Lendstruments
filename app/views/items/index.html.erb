@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Items</h1>
-
+<%= render partial: "shared/category-cards" %>
+  <div class="banner">
+     <%= image_tag "banner.png", id: "main-banner" %>
+  </div>
   <div class="main-container">
     <div class="cards">
       <% if @items.empty? %>
