@@ -2,7 +2,7 @@
 
 <div class="container" id="item-container">
   <div class="row item-overview">
-    <div class="col-6">
+    <div class="col-6" id="item-overview-info">
       <h1 id="item-name">
         <%= @item.name %>
       </h1>
@@ -30,7 +30,9 @@
         <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-edit" %>
       <% end %>
       <%= link_to 'Back', items_path, class:"btn btn-back" %>
-      <%= link_to "Reqest this item", new_item_booking_path(@item), class:"btn btn-request" %>
+      <% if @item.user != current_user %>
+        <%= link_to "Reqest this item", new_item_booking_path(@item), class:"btn btn-request" %>
+      <% end %>
     </div>
   </div>
 </div>

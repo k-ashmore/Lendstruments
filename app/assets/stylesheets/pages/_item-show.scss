@@ -7,11 +7,14 @@
 #item-container {
   display: grid;
   justify-content: space-evenly;
-
 }
 
-#item-overview {
+.item-overview {
   padding-bottom: 15px;
+
+  #item-overview-info {
+    padding: 0 100px 0 20px;
+  }
 }
 
 #item-name {
