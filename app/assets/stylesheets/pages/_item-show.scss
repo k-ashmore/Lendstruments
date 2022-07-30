@@ -7,11 +7,14 @@
 #item-container {
   display: grid;
   justify-content: space-evenly;
-
 }
 
-#item-overview {
+.item-overview {
   padding-bottom: 15px;
+
+  #item-overview-info {
+    padding: 0 100px 0 20px;
+  }
 }
 
 #item-name {
@@ -46,13 +49,17 @@
   width: 13rem;
   background-color: $main-blue;
   border-radius: 10px;
-  border-color: black;
+  border: solid 1px black;
 }
 
 .btn-back {
   background-color: lightgoldenrodyellow;
+  border-radius: 10px;
+  border: solid 1px black;
 }
 
 .btn-edit {
   background-color: $main-green;
+  border-radius: 10px;
+  border: solid 1px black;
 }
