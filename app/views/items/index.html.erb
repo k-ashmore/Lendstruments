@@ -15,6 +15,7 @@
           <div class="card-pick-info">
               <h2><%= item.name %></h2>
               <h5><%= item.user.username %></h5>
+              <p><%= format_price(item.daily_rate) %> / day</p>
               <p><%= item.details %></p>
               <% if policy(item).edit? %>
                 <%= link_to 'Edit', edit_item_path(item) %>
@@ -28,5 +29,4 @@
       <% end %>
     </div>
   </div>
-
 <br>
