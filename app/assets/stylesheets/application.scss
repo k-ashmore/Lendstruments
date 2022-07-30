@@ -7,15 +7,14 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr";
 
 // Your CSS partials (put components in index sass, not HERE)
 @import "components/index";
-@import "pages/index";
-
-@import "pages/login";
 @import "components/bookings_card";
-
-@import "flatpickr/dist/flatpickr";
+@import "pages/index";
+@import "pages/item-show";
+@import "pages/login";
 
 a {
   text-decoration: none;
