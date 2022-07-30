@@ -1,7 +1,11 @@
 import flatpickr from "flatpickr";
 
 const initFlatpickr = () => {
-  flatpickr(".datepicker", {});
+  window.addEventListener("turbolinks:load", function() {
+    flatpickr(".datepicker", {
+      altInput: true
+    });
+  })
 }
 
 export { initFlatpickr };
