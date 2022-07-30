@@ -4,9 +4,9 @@
     <div class="bookings-card mb-3">
       <%= cl_image_tag booking.item.photo.key, class: "item-img" %>
       <div class="bookings-card-details m-2">
-        <div class="status-owner">
+        <div class="status owner">
           <p class="status"><%= booking.status %></p>
-          <p class="owner"><%= booking.item.user.username %>'s item</p>
+          <p class="item-owner"><%= booking.item.user.username %>'s item</p>
         </div>
         <div class="req-and-owner">
           <div class="req-details">
@@ -25,7 +25,7 @@
         </div>
         <div class="card-buttons">
           <% if policy(booking).destroy? %>
-            <%= link_to "Cancel", booking_path(booking), :method => :delete, :class => 'contact-btn', data: {confirm: "Are you sure?"} %>
+            <%= link_to "Cancel", booking_path(booking), :method => :delete, :class => 'cancel-btn', data: {confirm: "Are you sure?"} %>
           <% end %>
         </div>
       </div>
@@ -40,9 +40,9 @@
       <div class="bookings-card mb-3">
         <%= cl_image_tag booking.item.photo.key, class: "item-img" %>
           <div class="bookings-card-details m-2">
-            <div class="status-owner">
+            <div class="status borrower">
               <p class="status"><%= booking.status %></p>
-              <p class="owner">Your item</p>
+              <p class="item-owner">Your item</p>
             </div>
             <div class="req-and-owner">
               <div class="req-details">
@@ -55,19 +55,19 @@
                 <p class="user-name"><%= booking.item.user.username %></p>
               </div>
             </div>
-          </div>
-          <div class="booking-actions">
-            <% if booking.pending? %>
-              <%= simple_form_for booking do |f| %>
-                <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                <%= f.submit 'Accept', class: 'btn btn-primary' %>
+            <div class="card-buttons">
+              <% if booking.pending? %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                  <%= f.submit 'Accept', class: 'accept-btn' %>
+                <% end %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                  <%= f.submit 'Reject', class: 'reject-btn' %>
+                <% end %>
+              <% else %>
               <% end %>
-              <%= simple_form_for booking do |f| %>
-                <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                <%= f.submit 'Reject', class: 'contact-btn' %>
-              <% end %>
-            <% else %>
-            <% end %>
+            </div>
           </div>
       </div>
     <% end %>
