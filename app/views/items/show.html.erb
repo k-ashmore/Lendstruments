@@ -29,10 +29,10 @@
       <% if policy(@item).edit? %>
         <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-edit" %>
       <% end %>
-      <%= link_to 'Back', items_path, class:"btn btn-back" %>
       <% if @item.user != current_user %>
         <%= link_to "Reqest this item", new_item_booking_path(@item), class:"btn btn-request" %>
       <% end %>
+      <%= link_to 'Back', items_path, class:"btn btn-back" %>
     </div>
   </div>
 </div>

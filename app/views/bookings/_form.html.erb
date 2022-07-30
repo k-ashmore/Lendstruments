@@ -1,10 +1,13 @@
-<div data-controller="booking-request" data-booking-request-daily-rate-value="<%= @item.daily_rate %>">
-  <%= simple_form_for [ @item, @booking ] do |f| %>
-    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", data: { action: "change->booking-request#calculateTotal", "booking-request-target": "startDate" }} %>
-    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", data: { action: "change->booking-request#calculateTotal", "booking-request-target": "endDate" }} %>
-    <p>Daily rate: <%= number_to_currency(@item.daily_rate, {unit: '¥', precision: 0}) %></p>
-    <p>Total cost: ¥<span data-booking-request-target="totalCost">0</span></p>
-    <p>Pick-up Location: <%= @item.pickup_location %></p>
-    <%= f.submit "Submit booking request", class: "submit-btn" %>
-  <% end %>
+<div class="container">
+  <div data-controller="booking-request" data-booking-request-daily-rate-value="<%= @item.daily_rate %>">
+    <%= simple_form_for [ @item, @booking ] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", data: { action: "change->booking-request#calculateTotal", "booking-request-target": "startDate" }} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", data: { action: "change->booking-request#calculateTotal", "booking-request-target": "endDate" }} %>
+      <p>Daily rate: <%= number_to_currency(@item.daily_rate, {unit: '¥', precision: 0}) %></p>
+      <p>Total cost: ¥<span data-booking-request-target="totalCost">0</span></p>
+      <p>Pick-up Location: <%= @item.pickup_location %></p>
+      <%= f.submit "Submit booking request", class: "submit-btn" %>
+      <%= link_to 'Back', item_path(@item), class:"btn btn-back" %>
+    <% end %>
+  </div>
 </div>
