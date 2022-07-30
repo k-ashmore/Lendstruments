@@ -1,2 +1,15 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#main-banner {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+  width: 75vw;
+  object-fit: cover;
+  border-radius: 10px;
+  justify-self: center;
+}

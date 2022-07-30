@@ -13,7 +13,9 @@
     <div class="menu-btn-burger">
       <ul id="hidden-menu" class="show">
         <li><%= link_to "My Bookings", bookings_path %></li>
-        <li>Settings</li>
+        <li><% if policy(Item).new? %>
+            <%= link_to "New item", new_item_path %>
+            <% end %></li>
         <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
       </ul>
 
