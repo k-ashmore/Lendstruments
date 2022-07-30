@@ -16,7 +16,11 @@
             <p class="req-total"><%= format_price(booking.item.daily_rate) %> x <%= (booking.end_date - booking.start_date).to_i  %> = <%= format_price(booking.item.daily_rate * (booking.end_date - booking.start_date).to_i) %> </p>
           </div>
           <div class="item-owner-details">
-            <img class="user-prof-pic" src="https://source.unsplash.com/random?person" alt="/user">
+            <% if booking.item.user.avatar.present? %>
+              <%= cl_image_tag(booking.item.user.avatar.key, class: "user-img rounded-circle") %>
+            <% else %>
+              <img class="user-prof-pic" src="https://source.unsplash.com/random/?person" alt="user-img">
+            <% end %>
             <p class="user-name"><%= booking.item.user.username %></p>
           </div>
         </div>
