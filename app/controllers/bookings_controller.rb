@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   # code in silo so as you make a new page make a new method
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
+    @bookings_as_owner = current_user.bookings_as_owner
   end
 
   def new
@@ -21,6 +22,16 @@ class BookingsController < ApplicationController
       redirect_to bookings_path, notice: 'Booking request was successfully created.'
     else
       render :new
+    end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      render "index"
     end
   end
 

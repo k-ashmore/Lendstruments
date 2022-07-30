@@ -17,14 +17,12 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def update?
+    record.item.user == user
+  end
+
   # NOTE: Be explicit about which records you allow access to!
   # def resolve
   #   scope.all
   # end
 end
-
-# <% @restaurants.each do |restaurant| %>
-# <% if policy(restaurant).edit? %>
-#   <%= link_to "Update", edit_restaurant_path(restaurant) %>
-# <% end %>
-# <% end %>
