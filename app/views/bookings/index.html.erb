@@ -8,7 +8,6 @@
           <p class="status"><%= booking.status %></p>
           <p class="owner"><%= booking.item.user.username %>'s item</p>
         </div>
-
         <div class="req-and-owner">
           <div class="req-details">
             <p class="req-title"><%= booking.item.name %></p>
@@ -31,5 +30,46 @@
         </div>
       </div>
     </div>
+  <% end %>
+      <!--
+      PENDING REQUEST CARDS
+      -->
+  <% @bookings_as_owner.each do |booking| %>
+    <% if booking.item.user == current_user %>
+    <h1>Pending Requests </h1>
+      <div class="bookings-card mb-3">
+        <%= cl_image_tag booking.item.photo.key, class: "item-img" %>
+          <div class="bookings-card-details m-2">
+            <div class="status-owner">
+              <p class="status"><%= booking.status %></p>
+              <p class="owner">Your item</p>
+            </div>
+            <div class="req-and-owner">
+              <div class="req-details">
+                <p class="req-title"><%= booking.item.name %></p>
+                <p class="req-dates"><%= booking.start_date.to_formatted_s(:short) %> - <%= booking.end_date.to_formatted_s(:short) %></p>
+                <p class="req-total"><%= format_price(booking.item.daily_rate) %> x <%= (booking.end_date - booking.start_date).to_i  %> = <%= format_price(booking.item.daily_rate * (booking.end_date - booking.start_date).to_i) %> </p>
+              </div>
+              <div class="item-owner-details">
+                <img class="user-prof-pic" src="https://source.unsplash.com/random?person" alt="/user">
+                <p class="user-name"><%= booking.item.user.username %></p>
+              </div>
+            </div>
+          </div>
+          <div class="booking-actions">
+            <% if booking.pending? %>
+              <%= simple_form_for booking do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                <%= f.submit 'Accept', class: 'btn btn-primary' %>
+              <% end %>
+              <%= simple_form_for booking do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                <%= f.submit 'Reject', class: 'contact-btn' %>
+              <% end %>
+            <% else %>
+            <% end %>
+          </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
