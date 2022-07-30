@@ -18,10 +18,10 @@
               <p><%= format_price(item.daily_rate) %> / day</p>
               <p><%= item.details %></p>
               <% if policy(item).edit? %>
-                <%= link_to 'Edit', edit_item_path(item) %>
+                <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-primary' %>
               <% end %>
               <% if policy(item).destroy? %>
-                <%= link_to 'Destroy', item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Delete', item_path(item), class: 'btn btn-light', method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
           </div>
           <% end %>
