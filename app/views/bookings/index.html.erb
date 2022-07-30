@@ -30,7 +30,7 @@
       <!--
       PENDING REQUEST CARDS
       -->
-  <% @bookings.each do |booking| %>
+  <% @bookings_as_owner.each do |booking| %>
     <% if booking.item.user == current_user %>
     <h1>Pending Requests </h1>
       <div class="bookings-card mb-3">

@@ -18,7 +18,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.item.user == user
   end
 
   # NOTE: Be explicit about which records you allow access to!

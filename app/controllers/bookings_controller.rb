@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   # code in silo so as you make a new page make a new method
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
+    @bookings_as_owner = current_user.bookings_as_owner
   end
 
   def new
