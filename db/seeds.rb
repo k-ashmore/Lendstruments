@@ -7,13 +7,41 @@ User.destroy_all
 puts "Seeding database with Plutonians..."
 password = "123456"
 
-ken = User.create(email: "ken@gmail.com", password: password, reset_password_token: "ken", username: "Ken")
+ken = User.create(
+  email: "ken@gmail.com",
+  password: password,
+  reset_password_token: "ken",
+  username: "Ken"
+)
+file = URI.open("https://avatars.githubusercontent.com/u/100769790?v=4")
+ken.avatar.attach(io: file, filename: 'ken.jpg', content_type: 'image/jpg')
 
-jessica = User.create(email: "jessica@gmail.com", password: password, reset_password_token: "jessica", username: "Jessica")
+jessica = User.create(
+  email: "jessica@gmail.com",
+  password: password,
+  reset_password_token: "jessica",
+  username: "Jessica"
+)
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1652752226/fu2oo0fckijyi9hkus1u.jpg")
+jessica.avatar.attach(io: file, filename: 'jess.jpg', content_type: 'image/jpg')
 
-tyler = User.create(email: "tyler@gmail.com", password: password, reset_password_token: "tyler", username: "Tyler")
+tyler = User.create(
+  email: "tyler@gmail.com",
+  password: password,
+  reset_password_token: "tyler",
+  username: "Tyler"
+)
+file = URI.open("https://avatars.githubusercontent.com/u/101543224?v=4")
+tyler.avatar.attach(io: file, filename: 'tyler.jpg', content_type: 'image/jpg')
 
-nicole = User.create(email: "nicole@gmail.com", password: password, reset_password_token: "nicole", username: "Nicole")
+nicole = User.create(
+  email: "nicole@gmail.com",
+  password: password,
+  reset_password_token:"nicole",
+  username: "Nicole"
+)
+file = URI.open("https://avatars.githubusercontent.com/u/74501096?v=4")
+nicole.avatar.attach(io: file, filename: 'nicole.jpg', content_type: 'image/jpg')
 
 puts "saving users..."
 ken.save
@@ -22,7 +50,6 @@ tyler.save
 nicole.save
 
 puts "adding items..."
-
 items = [
   {
     name: "guitar",
