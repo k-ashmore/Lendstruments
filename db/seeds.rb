@@ -1,7 +1,8 @@
 require 'open-uri'
 puts "cleaning database..."
-User.destroy_all
+Booking.destroy_all
 Item.destroy_all
+User.destroy_all
 
 puts "Seeding database with Plutonians..."
 password = "123456"

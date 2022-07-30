@@ -14,8 +14,8 @@
     <div class="col-6" id="item-details">
       <h3>Status: Available</h2>
       <p>Description: <%= @item.details %></p>
-      <p>Daily rate: ¥<%= @item.daily_rate %></p>
-      <p>Pick up:<%= @item.pickup_location %></p>
+      <p>Daily rate: <%= format_price(@item.daily_rate) %></p>
+      <p>Pick up: <%= @item.pickup_location %></p>
     </div>
 
     <div class="col-6" id="date-form-container">
@@ -35,8 +35,7 @@
   <div style="width: 400px; height: 400px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <div class="row">
     <div>
