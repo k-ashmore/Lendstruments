@@ -24,11 +24,18 @@
 
 }
 
-.status-owner {
+.status {
   display: flex;
   justify-content: space-between;
-  background-color: $main-green;
   text-decoration: underline;
+}
+
+.owner {
+  background-color: $main-green;
+}
+
+.borrower {
+  background-color: $main-blue;
 }
 
 .item-img {
@@ -52,12 +59,33 @@
   text-align: center;
 }
 
-.contact-btn {
-  padding: 10px;
+.cancel-btn {
+  padding: 8px;
   height: 40px;
   width: 75px;
-  background-color: #F04242;
+  border: solid rgb(169, 166, 166);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.accept-btn {
+  height: 40px;
+  width: 75px;
+  background-color: $main-blue;
   border-radius: 10px;
   border: solid;
   font-weight: bold;
+}
+
+.reject-btn {
+  height: 40px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid rgb(169, 166, 166);
+  font-weight: bold;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 16px;
 }
