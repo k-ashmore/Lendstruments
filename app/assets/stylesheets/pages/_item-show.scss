@@ -1,3 +1,9 @@
+#map-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
 #item-container {
   display: grid;
   justify-content: space-evenly;
@@ -34,16 +40,13 @@
   align-items: flex-end;
   justify-content: center;
 
-  #date-form {
+}
 
-  }
-
-  .btn-request {
-    width: 13rem;
-    background-color: $main-blue;
-    border-radius: 10px;
-    border-color: black;
-  }
+.btn-request {
+  width: 13rem;
+  background-color: $main-blue;
+  border-radius: 10px;
+  border-color: black;
 }
 
 .btn-back {
