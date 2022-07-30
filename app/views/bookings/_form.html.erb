@@ -5,6 +5,6 @@
     <p>Daily rate: <%= number_to_currency(@item.daily_rate, {unit: '¥', precision: 0}) %></p>
     <p>Total cost: ¥<span data-booking-request-target="totalCost">0</span></p>
     <p>Pick-up Location: <%= @item.pickup_location %></p>
-    <%= f.submit "Submit booking request", class: "btn btn-primary" %>
+    <%= f.submit "Submit booking request", class: "submit-btn" %>
   <% end %>
 </div>

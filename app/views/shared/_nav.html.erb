@@ -16,6 +16,7 @@
         <li><% if policy(Item).new? %>
             <%= link_to "New item", new_item_path %>
             <% end %></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
       </ul>
 

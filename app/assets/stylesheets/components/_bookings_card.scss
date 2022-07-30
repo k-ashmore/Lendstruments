@@ -28,6 +28,9 @@
   display: flex;
   justify-content: space-between;
   text-decoration: underline;
+  margin: -.5rem;
+  padding: 10px 10px 0px 8px;
+  margin-bottom: 2px;
 }
 
 .owner {
@@ -71,6 +74,15 @@
 .accept-btn {
   height: 40px;
   width: 75px;
+  background-color: $main-blue;
+  border-radius: 10px;
+  border: solid;
+  font-weight: bold;
+}
+
+.submit-btn {
+  height: 40px;
+  width: 200px;
   background-color: $main-blue;
   border-radius: 10px;
   border: solid;
